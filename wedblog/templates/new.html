@@ -1,0 +1,17 @@
+<a href="{%url 'home'%}">홈으로</a>
+
+<div class="container">
+    <h1 style="color:orangered">글쓰기</h1>
+    <form action="{% url 'create' %}">
+        <h4>제목: </h4>
+        <input type="text" name="title">
+        <br>
+        <br>
+        <h4>본문: </h4>
+        <textarea cols=40 rows=10 name="body"></textarea>
+        <br>
+        <br>
+        <input class="btn btn-dark" type="submit" value="제출">
+    </form>
+</div>
+

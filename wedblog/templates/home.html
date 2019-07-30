@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for wedblog in posts %}
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{wedblog.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{wedblog.pub_date}}</h6>
+                <p>{{wedblog.date}}</p>
+                <p class="card-text">{{wedblog.summary }}</p>
+                <a href="{% url 'detail' wedblog.id %}" class="card-link">...more</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    {%if posts.has_previous%}
+    <a href="?page=1">First</a>
+    <a href="?page={{posts.previous_page_number}}">Previous</a>
+    {%endif%}
+
+    <span>{{posts.number}}</span>
+    <span>of</span>
+    <span>{{posts.paginator.num_pages}}</span>
+
+    {%if posts.has_next%}
+    <a href="?page={{posts.next_page_number}}">Next</a>
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    {%endif%}
+
+<br>
+<a href="{%url 'new'%}">글쓰기</a>
+
+{% endblock %}
+

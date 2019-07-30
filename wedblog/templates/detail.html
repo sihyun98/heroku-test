@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>디테일 페이지입니다.</h1>
+    <div class="container jumbotron">
+        <h1>{{wedblog.title}}</h1>
+        <p>{{wedblog.pub_date}}</p>
+        <p>{{wedblog.body}}</p>
+        <a href="{% url 'home' %}">돌아가기</a>
+    </div>
+
+{% endblock %}
+
