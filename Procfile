@@ -1,0 +1,1 @@
+web: gunicorn wedproject.wsgi --log-file -
